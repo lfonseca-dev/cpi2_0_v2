@@ -12,11 +12,11 @@ const sendResponde = (res, {
         message,
         error,
         data,
-        quant: Array.isArray(data) ? data.length : quant ?? (data)
+        quant: Array.isArray(data) ? data.length : quant ?? (data ? 1 : 0),
     });
 }
 
-export const sucess = (res, {message = "Operação realizada com sucesso", data = null } = {}) => {
+export const success = (res, {message = "Operação realizada com sucesso", data = null } = {}) => {
     return sendResponde(res, { success: true, status: 200, message, data });
 };
 
